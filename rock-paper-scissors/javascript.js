@@ -3,67 +3,102 @@ console.log("Hello, World!");
 let humanScore = 0;
 let computerScore = 0;
 
+// revisiting (add UI)
+document.body.style.display = "flex";
+document.body.style.justifyContent = "center";
+document.body.style.alignItems = "center";
+
+const container = document.querySelector(".container");
+
+container.style.textAlign = "center";
+container.style.padding = "30px";
+
+const buttonsDiv = document.querySelector(".buttons");
+buttonsDiv.style.margin = "20px";
+
+const buttons = document.querySelectorAll("button");
+buttons.forEach(button => {
+    button.style.padding = "15px"
+    button.style.margin = "10px"
+    button.style.fontSize = "18px"
+    button.style.cursor = "pointer" 
+});
+
+//
+const playerSelectionText =
+document.querySelector("#playerChoice");
+
+const ComputerChoiceText =
+    document.querySelector("#computerChoice");
+
+const resultText = 
+document.querySelector("#resultText");
+
+const humanScoreText =
+document.querySelector("#humanScore");
+
+const computerScoreText =
+document.querySelector("#computerScore");
+
 function getComputerChoice() {
     const choices = ["rock", "paper", "scissors"];
-    const randomIndex = Math.floor(Math.random() * choices.length);
-    return choices[randomIndex];
+    return choices[Math.floor(Math.random()*3)];
 }
 
-function playRound(playerSelection, computerSelection) {
-    playerSelection = playerSelection.toLowerCase();
+function playRound(playerSelection){
 
-    if (playerSelection === computerSelection) {
-        return "It's a tie!";
-    }
+    const computerSelection =
+    getComputerChoice();
 
-    if (
-        (playerSelection === "rock" && computerSelection === "scissors") ||
-        (playerSelection === "paper" && computerSelection === "rock") ||
-        (playerSelection === "scissors" && computerSelection === "paper")
-    ) {
-        humanScore++;
-        return `You win! ${playerSelection} beats ${computerSelection}.`;
-    } else {
-        computerScore++;
-        return `You lose! ${computerSelection} beats ${playerSelection}.`;
-    }
-}
+    playerSelectionText.textContent =
+    `Player: ${playerSelection}`;
 
-function playGame() {
-    let choice = prompt("Enter rock, paper, or scissors:");
+    ComputerChoiceText.textContent =
+    `Computer: ${computerSelection}`;
 
-    if (
-        choice === null ||
-        !["rock", "paper", "scissors"].includes(choice.toLowerCase())
-    ) {
-        console.log("Invalid choice!");
+    if(playerSelection===computerSelection){
+        resultText.textContent="Its a tie game!";
+
+        // skor tetap ditampilkan
+        humanScoreText.textContent = humanScore;
+        computerScoreText.textContent = computerScore;
+
         return;
     }
 
-    let computerChoice = getComputerChoice();
+    if(
+        (playerSelection==="rock" &&
+        computerSelection==="scissors") ||
 
-    console.log(`Player: ${choice}`);
-    console.log(`Computer: ${computerChoice}`);
+        (playerSelection==="paper" &&
+        computerSelection==="rock") ||
 
-    let result = playRound(choice, computerChoice);
-    console.log(result);
+        (playerSelection==="scissors" &&
+        computerSelection==="paper")
+    ){
+        humanScore++;
+        resultText.textContent = "You Win!";
+    }
+    else{
+        computerScore++;
+        resultText.textContent = "You Lose!";
+    }
 
-    console.log(
-        `Your score: ${humanScore}, Computer score: ${computerScore}`
-    );
-    console.log("----------------");
+    humanScoreText.textContent = humanScore;
+    computerScoreText.textContent = computerScore;
 }
 
-for (let i = 0; i < 5; i++) {
-    playGame();
-}
+document.querySelector("#rock")
+.addEventListener("click",
+    ()=>playRound("rock")
+);
 
-console.log(`Final Score - You: ${humanScore}, Computer: ${computerScore}`);
+document.querySelector("#paper")
+.addEventListener("click",
+    ()=>playRound("paper")
+);
 
-if (humanScore > computerScore) {
-    console.log("You win the game!");
-} else if (humanScore < computerScore) {
-    console.log("Computer wins the game!");
-} else {
-    console.log("It's a tie game!");
-}
+document.querySelector("#scissors")
+.addEventListener("click",
+    ()=>playRound("scissors")
+);
