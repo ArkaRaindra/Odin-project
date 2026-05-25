@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(
+        135deg,
+        #1a1a2e,
+        #16213e,
+        #0f3460
+    );
+}
+
+.calculator {
+    width: 340px;
+    padding: 20px;
+    border-radius: 25px;
+
+    background: rgba(255,255,255,.08);
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.4);
+}
+
+.display {
+    width: 100%;
+    height: 80px;
+
+    border: none;
+    outline: none;
+
+    border-radius: 15px;
+
+    margin-bottom: 20px;
+    padding: 15px;
+
+    font-size: 2rem;
+    text-align: right;
+
+    background: rgba(255,255,255,.15);
+    color: white;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.btn-container {
+    display: flex;
+    gap: 12px;
+}
+
+button {
+    flex: 1;
+    height: 65px;
+
+    border: none;
+    border-radius: 18px;
+
+    font-size: 1.2rem;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    color: white;
+
+    background: rgba(255,255,255,.1);
+
+    transition:
+    transform .2s,
+    background .2s;
+}
+
+button:hover {
+    transform: translateY(-3px);
+
+    background: rgba(255,255,255,.2);
+}
+
+button:active {
+    transform: scale(.95);
+}
+
+
+/* Operator */
+.btnadd,
+.btnsubtract,
+.btnmultiply,
+.btndivide,
+.btnsquare {
+    background: #ff9500;
+}
+
+/* Equal */
+.equal {
+    background: #34c759;
+}
+
+/* Clear */
+.btnclear {
+    background: #ff3b30;
+}
+
+/* Delete */
+.btndelete {
+    background: #5856d6;
+}
+
+/* Plus minus */
+.btnplusminus {
+    background: #5a5a5a;
+}
+
+.zero {
+    flex: 1;
+}
+
+/* Responsive */
+@media(max-width:400px){
+
+    .calculator{
+        width:95%;
+    }
+
+    button{
+        height:55px;
+    }
+
+    .display{
+        font-size:1.5rem;
+    }
+}
