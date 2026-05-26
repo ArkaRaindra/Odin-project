@@ -1,0 +1,167 @@
+@font-face {
+    font-family: norse;
+    src: url(Norse.otf);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+}
+
+.container{
+    display:flex;
+    height:100vh;
+}
+
+.img-container{
+    width:35%;
+    height: 125%;
+    position:relative;
+}
+
+.img-container > img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.logo{
+    position:absolute;
+    top:22%;
+    width:100%;
+    height:130px;
+    background:rgba(0,0,0,.45);
+    font-family:"norse";
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+
+    z-index:10;
+}
+
+.logo img{
+    width:80px;
+    height:auto;
+}
+
+.logo p{
+    font-size:4rem;
+    color:white;
+}
+
+.content{
+    width:65%;
+    background:#f9fafb;
+    display:flex;
+    flex-direction:column;
+}
+
+.content-top{
+    padding:130px 50px 60px;
+}
+
+.content-top p{
+    font-size:1.4rem;
+    font-weight:600;
+    max-width:700px;
+    margin-bottom:30px;
+}
+
+.content-input{
+    background:white;
+    padding:25px 50px 40px;
+    box-shadow:0 5px 10px rgba(0,0,0,.12);
+}
+
+.content-input>p{
+    font-size:1.8rem;
+    font-weight:500;
+    margin-bottom:20px;
+}
+
+form{
+    display:flex;
+    gap:80px;
+}
+
+form div{
+    display:flex;
+    flex-direction:column;
+}
+
+label{
+    margin-top:18px;
+    margin-bottom:3px;
+    font-size:.75rem;
+    font-weight:600;
+    letter-spacing:2px;
+    color:#444;
+}
+
+input{
+    width:260px;
+    height:35px;
+
+    border:1px solid #E5E7EB;
+    border-radius:4px;
+
+    padding:10px;
+    font-size:1rem;
+
+    outline:none;
+}
+
+input:focus{
+    border:1px solid #2563eb;
+    box-shadow:0 0 5px rgba(37,99,235,.3);
+}
+
+input:invalid:not(:placeholder-shown){
+    border:1px solid red;
+}
+
+.content-footer{
+    padding:35px 50px;
+}
+
+button{
+    width:220px;
+    height:55px;
+
+    border:none;
+    border-radius:8px;
+
+    background:#596D48;
+    color:white;
+
+    font-size:1rem;
+    font-weight:700;
+
+    cursor:pointer;
+
+    box-shadow:0 3px 8px rgba(0,0,0,.2);
+
+    margin-bottom:30px;
+}
+
+button:hover{
+    background:#4d5f3f;
+}
+
+.content-footer p{
+    font-size:1.1rem;
+}
+
+.content-footer a{
+    text-decoration:none;
+    margin-left:5px;
+    color:#596D48;
+    font-weight:700;
+}

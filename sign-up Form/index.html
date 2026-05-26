@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Sign-up Form</title>
+</head>
+<body>
+    <div class="container">
+        <div class="img-container">
+            <div class="logo">
+                <img src="/assets/luluco.png">
+                <p>Logo</p>
+            </div>
+            <img src="/assets/phos.jpg">
+        </div>
+        <div class="content">
+         <div class="content-top">
+            <p>This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams.</p>
+            <p>Sign up <i>now</i> to get started</p>
+            <p>You <i>know</i> you want to</p>
+         </div>
+         <div class="content-input">
+            <p>Let's do this</p>
+            <form id="sign-up-form">
+                <div>
+                    <label for="first-name">FIRST NAME*</label>
+                    <input type="text" name="first-name" id="first-name" placeholder="Thor" required>
+                    <label for="user_email">EMAIL*</label>
+                    <input type="email" name="user_email" id="user_email" placeholder="someone@example.com" required>
+                    <label for="password">PASSWORD*</label>
+                    <input type="password" name="password" id="password" minlength="8" required>
+                </div>
+                <div>
+                    <label for="last-name">LAST NAME</label>
+                    <input type="text" name="last-name" id="last-name" placeholder="Odinson">
+                    <label for="phone">PHONE NUMBER</label>
+                    <input type="tel" name="phone" id="phone">
+                    <label for="password-confirm">CONFIRM PASSWORD*</label>
+                    <input type="password" name="password-confirm" id="password-confirm" minlength="8" required>
+                </div>
+            </form>
+         </div>
+         <div class="content-footer">
+            <button type="submit" form="sign-up-form">Create Account</button>
+            <p>Already have an account?<a href="#">Log in</a></p>
+         </div>
+        </div>
+    </div>
+</body>
+</html>
