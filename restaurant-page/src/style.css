@@ -1,0 +1,214 @@
+@font-face {
+    font-family: keifont;
+    src: url(assets/keifont.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Roboto, sans-serif;
+    background: whitesmoke;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: rgb(255, 202, 127);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav img {
+    width: 100px;
+}
+
+.buttons button {
+    margin: 10px 20px;
+    padding: 10px 20px;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    font-family: keifont;
+    transition: .3s;
+}
+
+.buttons button:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.active-nav {
+    border-bottom: 3px solid white !important;
+}
+
+.hero {
+    text-align: center;
+    color: white;
+    background-image: url(assets/hero.jpg);
+    background-position: center;
+    background-size: cover;
+    padding: 50px 20px;
+}
+
+.hero h1 {
+    color: red;
+    font-family: keifont;
+    font-size: 42px;
+    -webkit-text-stroke: .5px black;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.hero img {
+    width: 220px;
+    margin-top: 20px;
+    border-radius: 20px;
+    background: white;
+}
+
+.hero-text {
+    width: min(800px, 90%);
+    margin: 20px auto;
+    padding: 20px;
+    background: rgb(189, 162, 142);
+    border: 3px solid black;
+    border-radius: 20px;
+    color: black;
+}
+
+.hero button {
+    margin-top: 20px;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 10px;
+    background: blanchedalmond;
+    font-family: keifont;
+    transition: .3s;
+}
+
+.hero button:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.menu-home {
+    padding: 40px;
+}
+
+.selector {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.selector button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    background: rgb(235, 78, 78);
+    border-radius: 10px;
+    border: none;
+    font-family: keifont;
+    transition: .3s;
+}
+
+.selector button:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.selector button.active {
+    background: rgb(244, 60, 60);
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+}
+
+.menu-all {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    width: 380px;
+    margin: 15px;
+    padding: 20px;
+    background: rgb(223, 220, 213);
+    border-radius: 15px;
+    transition: .3s;
+}
+
+.card:hover {
+    cursor: pointer;
+    transform: scale(1.01);
+}
+
+.card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card-text h2 {
+    margin-top: 10px;
+}
+
+.card-text p {
+    margin: 10px 0;
+}
+
+.price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+}
+
+.card button:hover {
+    cursor: pointer;
+}
+
+.about-section {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.about-section h1 {
+    font-family: keifont;
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    max-width: 800px;
+    margin: auto;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.about-section img {
+    width: 200px;
+    margin-top: 40px;
+}
+
+.footer {
+    text-align: center;
+    background: rgb(233, 205, 171);
+    padding: 20px;
+    font-weight: bold;
+}
